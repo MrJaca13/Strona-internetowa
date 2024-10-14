@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Dowiedz się więcej o firmie Romar, liderze w dostarczaniu systemów lakierniczych.">
+    <meta name="keywords" content="Romar, o nas, lakiernicze, przemysł, motoryzacja">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romar - O Nas</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Czcionki Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Nawigacja -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo_romar.png" alt="Romar Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="o-nas.html" class="active">O Nas</a></li>
+                <li><a href="oferta.html">Oferta</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sekcja O Nas -->
+    <section class="about">
+        <div class="container">
+            <h2>O Firmie Romar</h2>
+            <p>🏢 Romar to firma z wieloletnim doświadczeniem, specjalizująca się w dostarczaniu zaawansowanych systemów lakierniczych dla przemysłu i motoryzacji. Naszą misją jest dostarczanie innowacyjnych rozwiązań najwyższej jakości, które spełniają wymagania rynku.</p>
+            <p>👥 Od lat budujemy zaufanie naszych klientów, oferując pełne wsparcie techniczne na każdym etapie współpracy – od wyboru odpowiednich produktów, po obsługę posprzedażową. Naszym celem jest ciągły rozwój i adaptacja do najnowszych trendów technologicznych, aby sprostać rosnącym wymaganiom naszych klientów.</p>
+        </div>
+    </section>
+
+    <!-- Sekcja na Wizualizacje -->
+    <section class="visualization">
+        <div class="container">
+            <h2>Nasze Zdjęcia</h2>
+            <div class="image-placeholder">
+                <img src="images/placeholder1.jpg" alt="Zdjęcie 1" onclick="openModal(this)">
+                <img src="images/placeholder2.jpg" alt="Zdjęcie 2" onclick="openModal(this)">
+                <img src="images/placeholder3.jpg" alt="Zdjęcie 3" onclick="openModal(this)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal na powiększone zdjęcia -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Stopka -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2023 Romar. Wszelkie prawa zastrzeżone.</p>
+            <!-- Logotypy partnerów w stopce -->
+            <div class="footer-logos">
+                <img src="images/logo_ppg.png" alt="PPG Logo">
+                <img src="images/logo_nexa.png" alt="Nexa Logo">
+                <img src="images/logo_selemix.png" alt="Selemix Logo">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Skrypt JavaScript -->
+    <script>
+        function openModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

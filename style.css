@@ -1,0 +1,575 @@
+/* Resetowanie domyślnych stylów przeglądarki */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Czcionki */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Nawigacja */
+nav {
+    background-color: #fff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 80px; 
+    animation: logoFadeIn 1s ease-in-out;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #007BFF;
+}
+
+/* Animacja logo */
+@keyframes logoFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Kolumnowy układ dla stron produktów */
+.column-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.product-image {
+    width: 45%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-description {
+    width: 50%;
+    padding-left: 20px;
+}
+
+/* Dla ekranów mobilnych */
+@media (max-width: 992px) {
+    .column-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .product-image {
+        width: 100%;
+    }
+    
+    .product-description {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 20px;
+    }
+}
+
+/* Sekcja Hero */
+.hero {
+    position: relative;
+    background: url('images/hero_background.jpg') center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.btn-primary {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Animacje */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Sekcja Values */
+.values {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.values-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.value-item {
+    flex: 1 1 30%;
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.value-item:hover {
+    transform: scale(1.05);
+}
+
+.value-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.value-item h3 {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #007BFF;
+    font-weight: 600;
+}
+
+.value-item p {
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+/* Sekcje strony */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #007BFF;
+    font-weight: 600;
+}
+
+/* Sekcja ofertowa */
+.offer-section {
+    padding: 60px 0;
+}
+
+.offer-section h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #007BFF;
+    font-weight: 600;
+}
+
+/* Sekcje ofertowe z obramowaniem */
+.offer-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    transition: transform 0.3s, box-shadow 0.3s ease-in-out;
+    border: 2px solid #ddd; /* Dodane obramowanie */
+    border-radius: 10px; /* Zaokrąglone rogi */
+    padding: 8px; /* Zmniejszony padding */
+    width: 90%; /* Dodatkowo zmniejszona szerokość */
+}
+
+.offer-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Efekt animacji i podświetlenia */
+.offer-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-color: #007BFF;
+}
+
+.offer-item img {
+    width: 43%; /* Jeszcze bardziej zmniejszona szerokość obrazka */
+    border-radius: 10px;
+}
+
+.offer-item h3 {
+    font-size: 1.85rem; /* Jeszcze mniejsze nagłówki */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.offer-item p {
+    font-size: 0.9rem; /* Jeszcze mniejszy rozmiar tekstu */
+    font-weight: 400;
+}
+
+.offer-item div {
+    width: 50%;
+    padding: 12px; /* Zmniejszenie paddingu wewnętrznego */
+}
+
+.offer-item a {
+    margin-top: 20px;
+}
+
+/* Efekt hover na przyciskach */
+.btn-secondary {
+    display: inline-block;
+    background-color: #fff;
+    color: #007BFF;
+    padding: 10px 25px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.btn-secondary:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+/* Strona Kontakt */
+.contact-page .container {
+    margin-top: 60px;
+}
+
+.locations, .emails, .sales-representatives {
+    margin-bottom: 40px;
+}
+
+.locations h2, .emails h2, .sales-representatives h2 {
+    font-size: 2rem;
+    color: #007BFF;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.location, .representative {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.location h3, .representative h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.location p, .representative p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.btn-facebook {
+    display: inline-block;
+    background-color: #3b5998;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.btn-facebook:hover {
+    background-color: #2d4373;
+}
+
+/* Ikony w Kontakt */
+.icon {
+    font-size: 1.2rem;
+    color: #007BFF;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Stopka */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-container p {
+    margin-bottom: 10px;
+}
+
+.footer-container .social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+
+.footer-container .social-links a:hover {
+    color: #007BFF;
+}
+
+/* Logotypy partnerów w stopce */
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer-logos img {
+    height: 50px;
+    margin: 0 15px;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .offer-item {
+        flex-direction: column;
+    }
+
+    .offer-item img,
+    .offer-item div {
+        width: 100%;
+    }
+
+    .value-item {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .values-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .value-item {
+        margin: 20px 0;
+    }
+
+    .offer-item {
+        flex-direction: column;
+    }
+
+    .offer-item img,
+    .offer-item div {
+        width: 100%;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .offer-section h1 {
+        font-size: 2rem;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .nav-container {
+        width: 95%;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
+
+/* Modal (Okno powiększonego zdjęcia) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Zamknij przycisk (X) */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+}
+
+/* Tekst opisu pod zdjęciem */
+#caption {
+    margin: 15px auto;
+    text-align: center;
+    color: #ccc;
+    font-size: 18px;
+}
+
+/* Obrazy na stronie "O Nas" */
+.image-placeholder img {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.image-placeholder img:hover {
+    transform: scale(1.1);
+}
+
+.image-placeholder {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
